@@ -1,10 +1,10 @@
 <template>
   <v-container>
-    <div class="d-flex" style="flex-wrap:wrap">
-    <div v-for="item in searchData" :key="item.data.id"  class="mx-4 my-0 py-0" style="height: max-content">
-       <redditBox :data="item.data"/>
-    </div>
-    </div>
+    <v-layout row class="my-3">
+        <v-flex v-for="item in searchData" :key="item.data.id"  class=" py-0">
+          <redditBox :data="item.data"/>
+        </v-flex>
+    </v-layout>
   </v-container>
 </template>
 

@@ -1,13 +1,5 @@
 <template>
-  <v-card  class="mx-auto my-2" max-width="340">
-        <template slot="progress">
-          <v-progress-linear
-            color="deep-purple"
-            height="10"
-            indeterminate
-          ></v-progress-linear>
-        </template>
-
+  <v-card  class="mx-auto my-2" width="350">
         <v-img
           height="250"
           :src="data.thumbnail.match(/http/i)  ? data.thumbnail : 'https://i.redd.it/yksc27b8noiz.png'"
@@ -51,5 +43,6 @@ export default {
 .selected:hover{
     text-decoration: underline;
     cursor: pointer;
+    color: #FF4500
 }
 </style>

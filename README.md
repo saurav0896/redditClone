@@ -1,25 +1,27 @@
-# reddit-clone
+# Reddit Clone
+This project is a REST API based search handler. In this project I have integrated Vue JS solution with Reddit API and getting reddit data on parameter based search.
+
+
+## Project After being deployed on localhost:8080
+![](Images/LandingPage.PNG)
 
 ## Project setup
+Clone repository on your local and then run the below command which will install all the dependencies required for the project. Mostly dependies are built-in libraries nothing out of the box is installed as such.
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+Ones dependencies are installed , run below command to run the client server (Vue JS)
+### Complie and deploy client server (Vue JS)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Project is now deployed and can be access on below port
 ```
-npm run build
+http://localhost:8080/
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
+### Search Result on the WebPage
+![](Images/SearchResult.PNG)
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# redditClone

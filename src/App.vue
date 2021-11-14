@@ -22,6 +22,7 @@
           solo
           flat
           outlined
+          :rules="[(v) => !!v || 'This field is required']"
           label="Search Reddit"
           append-icon="mdi-magnify"
         ></v-text-field>
@@ -30,6 +31,7 @@
           :items="['relevance', 'hot', 'top', 'new', 'comments']"
           class="mt-6 ml-3 select"
           dense
+          flat
           background-color="white"
           v-model="sortBy"
           label="Sort By"
@@ -39,9 +41,10 @@
         ></v-select>
         <v-btn
           color="#FF4500"
-          dark
+          style="color:white"
           class="mx-2 py-5"
           :loading="loader"
+          :disabled="searchData == null || searchData.length == 0"
           @click="getSearch(searchData, sortBy)"
         >
           Search
@@ -61,20 +64,10 @@
               solo
               flat
               outlined
+              :rules="[(v) => !!v || 'This field is required']"
               label="Search Reddit"
               append-icon="mdi-magnify"
             ></v-text-field>
-            <!-- <v-select
-              :items="['relevance', 'hot', 'top', 'new', 'comments']"
-              class="mt-6 ml-3"
-              dense
-              background-color="white"
-              v-model="sortBy"
-              label="Sort By"
-              color="#FF4500"
-              solo
-              outlined
-            ></v-select> -->
             <label>Sort By : </label>
             <v-radio-group  v-model="sortBy" row>
               <v-radio color="#FF4500" label="Relevance" value="relevance"></v-radio>
@@ -85,10 +78,11 @@
             </v-radio-group>
             <v-btn
               color="#FF4500"
-              dark
+              style="color:white"
               class="mx-2 py-5"
               @click="getSearch(searchData, sortBy)"
               :loading="loader"
+              :disabled="searchData == null || searchData.length == 0"
             >
               Search
             </v-btn>
