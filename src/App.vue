@@ -133,12 +133,15 @@ export default {
   
   methods: {
     getSearch(data, sort) {
+      
       this.loader = true;
       axios
         .get(`https://www.reddit.com/search.json?q=${data}&sort=${sort}`)
         .then((res) => {
           this.searchResult = res.data.data.children;
           this.loader = false;
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
           this.refreshComponent++;
         })
         .catch((error) => {
